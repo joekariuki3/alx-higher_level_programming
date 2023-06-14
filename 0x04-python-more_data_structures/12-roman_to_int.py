@@ -9,4 +9,6 @@ def roman_to_int(roman_string):
         for char in roman_string:
             if char in values.keys():
                 result = result + values[char]
+            else:
+                result = result + 0
         return result
