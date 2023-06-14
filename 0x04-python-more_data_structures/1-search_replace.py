@@ -2,4 +2,4 @@
 def search_replace(my_list, search, replace):
     if not my_list:
         return None
-    return [replace if search == n else n for n in my_list]
+    return [replace if n == search  else n for n in my_list]
