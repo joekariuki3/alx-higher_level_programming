@@ -5,6 +5,7 @@ def weight_average(my_list=[]):
     pairTotal = 0
     toDivWith = 0
     for pair in my_list:
-        pairTotal = pairTotal + (pair[0] * pair[1])
-        toDivWith = toDivWith + pair[1]
+        if len(pair) == 2:
+            pairTotal = pairTotal + (pair[0] * pair[1])
+            toDivWith = toDivWith + pair[1]
     return pairTotal / toDivWith
