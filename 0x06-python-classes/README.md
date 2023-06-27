@@ -1,1 +1,1 @@
-My first square
+# Python - Classes and Objects
