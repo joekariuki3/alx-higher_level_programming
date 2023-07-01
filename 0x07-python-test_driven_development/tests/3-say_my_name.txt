@@ -1,0 +1,28 @@
+import the function say_my_name
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+test by passing 1st n 2nd name as string
+>>> say_my_name("Joel", "Muhoho")
+'My name is Joel Muhoho'
+
+test by passing 1st as int n 2nd as string
+>>> say_my_name(2, "Muhoho")
+Traceback (most recent call last):
+	    ...
+TypeError: first_name must be a string
+
+test by passing 1st as str and 2nd as int
+>>> say_my_name("Joel", 5)
+Traceback (most recent call last):
+	    ...
+TypeError: last_name must be a string
+
+test by passing 1st n 2nd as int
+>>> say_my_name(7, 6)
+Traceback (most recent call last):
+	    ...
+TypeError: first_name must be a string
+
+test pass only one string
+>>> say_my_name("joel")
+'My name is joel'
