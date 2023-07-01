@@ -1,0 +1,27 @@
+import print_square function
+>>> print_square = __import__('4-print_square').print_square
+
+test size qa int
+>>> print_square(4)
+####
+####
+####
+####
+
+test size as str
+>>> print_square("hello")
+Traceback (most recent call last):
+	    ...
+TypeError: size must be an integer
+
+test size is less than 0
+>>> print_square(-5)
+Traceback (most recent call last):
+	    ...
+ValueError: size must be >= 0
+
+test size is a float and less than 0
+>>> print_square(0.85)
+Traceback (most recent call last):
+	    ...
+TypeError: size must be an integer
