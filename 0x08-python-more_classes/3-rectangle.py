@@ -48,6 +48,9 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return ""
         else:
+            string = []
             for row in range(self.__height):
-                print("#" * self.__width)
-            return ""
+                [string.append("#") for column in range(self.__width)]
+                if row != self.__height - 1:
+                    string.append("\n")
+            return ("".join(string))
