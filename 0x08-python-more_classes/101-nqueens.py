@@ -2,6 +2,7 @@
 
 import os
 
+
 def getN():
     if len(os.sys.argv) == 2:
         n = os.sys.argv[1]
@@ -16,4 +17,6 @@ def getN():
     else:
         print("Usage: nqueens N\n")
         exit(1)
+
+
 getN()
