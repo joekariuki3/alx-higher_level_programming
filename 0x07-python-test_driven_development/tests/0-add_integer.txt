@@ -24,3 +24,13 @@ test by passing None
 Traceback (most recent call last):
 	    ...
 TypeError: a must be an integer
+
+>>> add_integer(hellothejeewj)
+Traceback (most recent call last):
+	    ...
+OverflowError: integer overflow
+
+>>> add_integer()
+Traceback (most recent call last):
+	    ...
+ValueError: missing two arguments
