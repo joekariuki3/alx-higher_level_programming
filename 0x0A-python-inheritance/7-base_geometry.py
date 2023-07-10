@@ -21,11 +21,7 @@ class BaseGeometry():
         """
         validates the value passed
         """
-        name = str(name)
-        if isinstance(name, string):
-            if not isinstance(value, int):
-                raise TypeError("{} must be an integer".format(name))
-            if value < 1:
-                raise ValueError("{} must be greater than 0".format(name))
-        else:
-            raise TypeError("name is required")
+        if not isinstance(value, int):
+            raise TypeError("{} must be an integer".format(name))
+        if value < 1:
+            raise ValueError("{} must be greater than 0".format(name))
