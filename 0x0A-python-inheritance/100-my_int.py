@@ -11,8 +11,10 @@ class MyInt(int):
     """
     def __eq__(self, num):
         """ check for equality using super function"""
-        return super().__eq__(num)
+        if isinstance(num, int):
+            return super().__eq__(num)
 
     def __ne__(self, num):
         """ checks for not equal to using super function """
-        return super().__ne__(num)
+        if isinstance(num, int):
+            return super().__ne__(num)
