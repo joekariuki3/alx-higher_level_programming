@@ -3,9 +3,13 @@
 """
 Get the unittest module
 Get the Rectangle class from models/rectangle.py
+Get patch from inittest.moc
+get StringIO from io
 """
 
 import unittest
+from unittest.mock import patch
+from io import StringIO
 from models.rectangle import Rectangle
 
 """start of unittest class """
@@ -20,6 +24,7 @@ class TestRectangle(unittest.TestCase):
         cls.r2 = Rectangle(2, 10)
         cls.r3 = Rectangle(8, 7, 0, 0, 12)
         cls.r4 = Rectangle(3, 7)
+        cls.r5 = Rectangle(2, 3)
 
     """test id None"""
     def test_None(self):
@@ -74,6 +79,13 @@ class TestRectangle(unittest.TestCase):
     def test_area(self):
         self.assertEqual(TestRectangle.r3.area(), 56)
         self.assertEqual(TestRectangle.r2.area(), 20)
+
+    """test Display"""
+    def test_display(self):
+        output = "##\n##\n##\n"
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            TestRectangle.r5.display()
+            self.assertEqual(fake_out.getvalue(), output)
 
 
 if __name__ == "__main__":
