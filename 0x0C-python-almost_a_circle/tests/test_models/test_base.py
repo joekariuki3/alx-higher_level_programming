@@ -21,7 +21,7 @@ class TestBase(unittest.TestCase):
 
     """test id None"""
     def test_None(self):
-        self.assertTrue(isinstance((TestBase.b1.id), int))
+        self.assertTrue(type(TestBase.b1.id), int)
 
     """test id with int"""
     def test_int(self):
