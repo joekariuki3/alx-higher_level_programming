@@ -15,14 +15,14 @@ class Rectangle(Base):
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
     @property
     def width(self):
-        return self._width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -30,11 +30,11 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         elif value < 1:
             raise ValueError("width must be > 0")
-        self._width = value
+        self.__width = value
 
     @property
     def height(self):
-        return self._height
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -42,11 +42,11 @@ class Rectangle(Base):
             raise TypeError("height must be an integer")
         elif value < 1:
             raise ValueError("height must be > 0")
-        self._height = value
+        self.__height = value
 
     @property
     def x(self):
-        return self._x
+        return self.__x
 
     @x.setter
     def x(self, value):
@@ -54,11 +54,11 @@ class Rectangle(Base):
             raise TypeError("x must be an integer")
         elif value < 0:
             raise ValueError("x must be >= 0")
-        self._x = value
+        self.__x = value
 
     @property
     def y(self):
-        return self._y
+        return self.__y
 
     @y.setter
     def y(self, value):
@@ -66,18 +66,18 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         elif value < 0:
             raise ValueError("y must be >= 0")
-        self._y = value
+        self.__y = value
 
     def area(self):
         """ return the area of a Rectangle"""
-        return self._width * self._height
+        return self.width * self.height
 
     def display(self):
         """prints the shape of a rectangle"""
-        for row in range(self._height):
-            print("#" * self._width)
+        for row in range(self.height):
+            print("#" * self.width)
 
     def __str__(self):
         """print object"""
         return ("[Rectangle] ({}) {}/{} - {}/{}".
-                format(self.id, self._x, self._y, self._width, self._height))
+                format(self.id, self.x, self.y, self.width, self.height))
