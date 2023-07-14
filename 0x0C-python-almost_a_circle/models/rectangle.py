@@ -14,8 +14,7 @@ class Rectangle(Base):
     initiate the class
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__()
-        self.id = id
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
@@ -49,7 +48,7 @@ class Rectangle(Base):
     def x(self):
         return self._x
 
-    @width.setter
+    @x.setter
     def x(self, value):
         if type(value) != int:
             raise TypeError("x must be an integer")
@@ -71,9 +70,14 @@ class Rectangle(Base):
 
     def area(self):
         """ return the area of a Rectangle"""
-        return self.width * self.height
+        return self._width * self._height
 
     def display(self):
         """prints the shape of a rectangle"""
-        for row in range(self.height):
-            print("#" * self.width)
+        for row in range(self._height):
+            print("#" * self._width)
+
+    def __str__(self):
+        """print object"""
+        return ("[Rectangle] ({}) {}/{} - {}/{}".
+                format(self.id, self._x, self._y, self._width, self._height))
