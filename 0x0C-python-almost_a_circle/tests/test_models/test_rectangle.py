@@ -133,6 +133,16 @@ class TestRectangle(unittest.TestCase):
         progOutput = Base.to_json_string([dictionary])
         self.assertEqual(progOutput, output)
 
+    """ test Json to file"""
+    def test_save_to_file(self):
+        output = '[{"id": 6, "width": 10, "height": 7, "x": 2, "y": 8}]'
+        r7 = Rectangle(10, 7, 2, 8)
+        Rectangle.save_to_file([r7])
+        with open("Rectangle.json", "r") as myfile:
+            progOutput = myfile.read()
+            self.assertEqual(progOutput, output)
+
+
 
 if __name__ == "__main__":
     unittest.main()
