@@ -143,6 +143,5 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(progOutput, output)
 
 
-
 if __name__ == "__main__":
     unittest.main()

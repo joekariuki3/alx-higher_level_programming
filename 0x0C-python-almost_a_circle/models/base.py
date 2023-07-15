@@ -4,6 +4,7 @@ class Base
 """
 import json
 
+
 class Base():
     """
     declare private class atribute
@@ -22,7 +23,7 @@ class Base():
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """ turn dictionary to json """
@@ -30,7 +31,7 @@ class Base():
             return "[]"
         else:
             return json.dumps(list_dictionaries)
-         
+
     @classmethod
     def save_to_file(cls, list_objs):
         jsonToSave = []
@@ -46,8 +47,6 @@ class Base():
             if index == 0:
                 jsonToSaveString += item
             elif index != len(jsonToSave):
-                jsonToSaveString += ", "+ item 
+                jsonToSaveString += ", " + item
         with open(filename, mode='w', encoding='utf-8') as my_file:
             my_file.write(jsonToSaveString+"]")
-
-
