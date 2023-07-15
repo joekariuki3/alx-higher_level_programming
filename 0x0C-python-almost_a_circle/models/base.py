@@ -50,3 +50,9 @@ class Base():
                 jsonToSaveString += ", " + item
         with open(filename, mode='w', encoding='utf-8') as my_file:
             my_file.write(jsonToSaveString+"]")
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None:
+            return []
+        return json.loads(json_string)

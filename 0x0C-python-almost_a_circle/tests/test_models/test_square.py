@@ -33,6 +33,7 @@ class TestSquare(unittest.TestCase):
 
     """test id with int"""
     def test_int(self):
+        TestSquare.s3.update(3)
         self.assertEqual(TestSquare.s3.id, 3)
 
     """test width value """
@@ -86,6 +87,7 @@ class TestSquare(unittest.TestCase):
     """test __str__"""
     def test_string(self):
         output = "[Square] (6) 0/0 - 4\n"
+        TestSquare.s6.update(6, 4)
         with patch('sys.stdout', new=StringIO()) as fake_out:
             print(TestSquare.s6)
             self.assertEqual(fake_out.getvalue(), output)

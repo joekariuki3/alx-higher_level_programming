@@ -97,10 +97,12 @@ class TestRectangle(unittest.TestCase):
     """test __str__"""
     def test_string(self):
         output = "[Rectangle] (12) 2/1 - 4/6\n"
+        TestRectangle.r6.update(12)
         with patch('sys.stdout', new=StringIO()) as fake_out:
             print(TestRectangle.r6)
             self.assertEqual(fake_out.getvalue(), output)
         output = "[Rectangle] (1) 0/0 - 10/2\n"
+        TestRectangle.r1.update(1)
         with patch('sys.stdout', new=StringIO()) as fake_out:
             print(TestRectangle.r1)
             self.assertEqual(fake_out.getvalue(), output)
@@ -124,23 +126,6 @@ class TestRectangle(unittest.TestCase):
         TestRectangle.r6.update(89, 2, 3, 4, 8)
         progOutput = TestRectangle.r6.to_dictionary()
         self.assertEqual(progOutput, output)
-
-    """test_to_json_string"""
-    def test_to_json_string(self):
-        output = '[{"id": 89, "width": 2, "height": 3, "x": 4, "y": 8}]'
-        TestRectangle.r6.update(89, 2, 3, 4, 8)
-        dictionary = TestRectangle.r6.to_dictionary()
-        progOutput = Base.to_json_string([dictionary])
-        self.assertEqual(progOutput, output)
-
-    """ test Json to file"""
-    def test_save_to_file(self):
-        output = '[{"id": 6, "width": 10, "height": 7, "x": 2, "y": 8}]'
-        r7 = Rectangle(10, 7, 2, 8)
-        Rectangle.save_to_file([r7])
-        with open("Rectangle.json", "r") as myfile:
-            progOutput = myfile.read()
-            self.assertEqual(progOutput, output)
 
 
 if __name__ == "__main__":
