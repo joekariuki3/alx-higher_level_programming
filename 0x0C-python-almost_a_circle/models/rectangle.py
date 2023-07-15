@@ -84,7 +84,7 @@ class Rectangle(Base):
         return ("[Rectangle] ({}) {}/{} - {}/{}".
                 format(self.id, self.x, self.y, self.width, self.height))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update Rectangle"""
         variables = ['id', 'width', 'height', 'x', 'y']
         if args:
@@ -93,3 +93,7 @@ class Rectangle(Base):
                     setattr(self, variables[index], value)
                 else:
                     break
+        elif kwargs:
+            for key, value in kwargs.items():
+                if key in variables:
+                    setattr(self, key, value)
