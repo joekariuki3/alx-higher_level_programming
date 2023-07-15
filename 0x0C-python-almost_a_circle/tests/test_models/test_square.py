@@ -45,7 +45,6 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(ValueError):
             TestSquare.s3.size = -1
 
-
     """test x value """
     def test_x_nonInt(self):
         with self.assertRaises(TypeError):
@@ -103,6 +102,12 @@ class TestSquare(unittest.TestCase):
             TestSquare.s6.update(x=1, size=2, y=3)
             print(TestSquare.s6)
             self.assertEqual(fake_out.getvalue(), output)
+
+    def test_to_dictionary(self):
+        output = {'id': 89, 'size': 2, 'x': 4, 'y': 8}
+        TestSquare.s6.update(89, 2, 4, 8)
+        progOutput = TestSquare.s6.to_dictionary()
+        self.assertEqual(progOutput, output)
 
 
 if __name__ == "__main__":
