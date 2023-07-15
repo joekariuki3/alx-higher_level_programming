@@ -74,8 +74,10 @@ class Rectangle(Base):
 
     def display(self):
         """prints the shape of a rectangle"""
+        if self.y != 0:
+            print("\n" * (self.y - 1))
         for row in range(self.height):
-            print("#" * self.width)
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """print object"""

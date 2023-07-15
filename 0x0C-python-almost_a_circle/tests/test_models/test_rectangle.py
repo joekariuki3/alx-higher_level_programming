@@ -24,7 +24,7 @@ class TestRectangle(unittest.TestCase):
         cls.r2 = Rectangle(2, 10)
         cls.r3 = Rectangle(8, 7, 0, 0, 12)
         cls.r4 = Rectangle(3, 7)
-        cls.r5 = Rectangle(2, 3)
+        cls.r5 = Rectangle(2, 3, 2, 2)
         cls.r6 = Rectangle(4, 6, 2, 1, 12)
 
     """test id None"""
@@ -83,8 +83,13 @@ class TestRectangle(unittest.TestCase):
 
     """test Display"""
     def test_display(self):
-        output = "##\n##\n##\n"
+        output = "\n\n  ##\n  ##\n  ##\n"
         with patch('sys.stdout', new=StringIO()) as fake_out:
+            TestRectangle.r5.display()
+            self.assertEqual(fake_out.getvalue(), output)
+        output = " ###\n ###\n"
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            TestRectangle.r5 = Rectangle(3, 2, 1, 0)
             TestRectangle.r5.display()
             self.assertEqual(fake_out.getvalue(), output)
 
