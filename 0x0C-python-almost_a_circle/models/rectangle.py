@@ -83,3 +83,13 @@ class Rectangle(Base):
         """print object"""
         return ("[Rectangle] ({}) {}/{} - {}/{}".
                 format(self.id, self.x, self.y, self.width, self.height))
+
+    def update(self, *args):
+        """Update Rectangle"""
+        variables = ['id', 'width', 'height', 'x', 'y']
+        if args:
+            for index, value in enumerate(args):
+                if index < 5:
+                    setattr(self, variables[index], value)
+                else:
+                    break

@@ -104,6 +104,14 @@ class TestRectangle(unittest.TestCase):
             print(TestRectangle.r1)
             self.assertEqual(fake_out.getvalue(), output)
 
+    """test update"""
+    def test_update(self):
+        output = "[Rectangle] (89) 4/8 - 2/3\n"
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            TestRectangle.r6.update(89, 2, 3, 4, 8)
+            print(TestRectangle.r6)
+            self.assertEqual(fake_out.getvalue(), output)
+
 
 if __name__ == "__main__":
     unittest.main()
