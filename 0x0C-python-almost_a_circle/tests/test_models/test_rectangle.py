@@ -117,6 +117,12 @@ class TestRectangle(unittest.TestCase):
             print(TestRectangle.r6)
             self.assertEqual(fake_out.getvalue(), output)
 
+    def test_to_dictionary(self):
+        output = {'id': 89, 'width': 2, 'height': 3, 'x': 4, 'y': 8}
+        TestRectangle.r6.update(89, 2, 3, 4, 8)
+        progOutput = TestRectangle.r6.to_dictionary()
+        self.assertEqual(progOutput, output)
+
 
 if __name__ == "__main__":
     unittest.main()
