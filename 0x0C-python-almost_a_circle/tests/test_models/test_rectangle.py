@@ -10,6 +10,7 @@ get StringIO from io
 import unittest
 from unittest.mock import patch
 from io import StringIO
+from models.base import Base
 from models.rectangle import Rectangle
 
 """start of unittest class """
@@ -117,10 +118,19 @@ class TestRectangle(unittest.TestCase):
             print(TestRectangle.r6)
             self.assertEqual(fake_out.getvalue(), output)
 
+    """test to_dictionary"""
     def test_to_dictionary(self):
         output = {'id': 89, 'width': 2, 'height': 3, 'x': 4, 'y': 8}
         TestRectangle.r6.update(89, 2, 3, 4, 8)
         progOutput = TestRectangle.r6.to_dictionary()
+        self.assertEqual(progOutput, output)
+
+    """test_to_json_string"""
+    def test_to_json_string(self):
+        output = '[{"id": 89, "width": 2, "height": 3, "x": 4, "y": 8}]'
+        TestRectangle.r6.update(89, 2, 3, 4, 8)
+        dictionary = TestRectangle.r6.to_dictionary()
+        progOutput = Base.to_json_string([dictionary])
         self.assertEqual(progOutput, output)
 
 
