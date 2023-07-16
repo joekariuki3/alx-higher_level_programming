@@ -56,11 +56,20 @@ class TestBase(unittest.TestCase):
         progOutput = Base.from_json_string(json_list_input)
         self.assertEqual(progOutput, output)
 
+    """ test creat method """
     def test_create(self):
         r8 = Rectangle(3, 5, 1)
         r8dictionary = r8.to_dictionary()
         r8ins = Rectangle.create(**r8dictionary)
         self.assertTrue(isinstance(r8ins, Rectangle))
+
+    """ test load_from_file method """
+    def test_load_from_file(self):
+        r8 = Rectangle(3, 5, 1)
+        list_input = [r8]
+        Rectangle.save_to_file(list_input)
+        list_output = Rectangle.load_from_file()
+        self.assertTrue(isinstance(list_output[0], Rectangle))
 
 
 if __name__ == "__main__":

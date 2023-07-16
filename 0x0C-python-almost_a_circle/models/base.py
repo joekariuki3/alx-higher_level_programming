@@ -3,6 +3,7 @@
 class Base
 """
 import json
+import os
 
 
 class Base():
@@ -67,3 +68,18 @@ class Base():
             return
         class_ins.update(**dictionary)
         return class_ins
+
+    @classmethod
+    def load_from_file(cls):
+        mylist = []
+        filename = cls.__name__+".json"
+        jsonstring = ""
+        if os.path.exists(filename):
+            with open(filename, mode="r", encoding="utf-8") as myfile:
+                jsonstring = myfile.read()
+            pythonDic = cls.from_json_string(jsonstring)
+            for dic in pythonDic:
+                mylist.append(cls.create(**dic))
+            return mylist
+        else:
+            return mylist
