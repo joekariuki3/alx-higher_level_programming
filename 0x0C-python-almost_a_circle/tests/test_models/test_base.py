@@ -48,13 +48,19 @@ class TestBase(unittest.TestCase):
 
     """ test from_json_string to dic"""
     def test_save_to_file(self):
-        output = [{'id': 89, 'width': 10, 'height': 4}, {'i
-                  d': 7, 'width': 1, 'height': 7}]
-        list_input = [{'id': 89, 'width': 10, 'height': 4}, {'i
-                      d': 7, 'width': 1, 'height': 7}]
+        output = [{'id': 89, 'width': 10, 'height': 4
+                   }, {'id': 7, 'width': 1, 'height': 7}]
+        list_input = [{'id': 89, 'width': 10, 'height': 4
+                       }, {'id': 7, 'width': 1, 'height': 7}]
         json_list_input = Rectangle.to_json_string(list_input)
         progOutput = Base.from_json_string(json_list_input)
         self.assertEqual(progOutput, output)
+
+    def test_create(self):
+        r8 = Rectangle(3, 5, 1)
+        r8dictionary = r8.to_dictionary()
+        r8ins = Rectangle.create(**r8dictionary)
+        self.assertTrue(isinstance(r8ins, Rectangle))
 
 
 if __name__ == "__main__":
