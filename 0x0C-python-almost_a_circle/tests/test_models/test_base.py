@@ -71,6 +71,23 @@ class TestBase(unittest.TestCase):
         list_output = Rectangle.load_from_file()
         self.assertTrue(isinstance(list_output[0], Rectangle))
 
+    """ test save_to_file_csv"""
+    def test_save_to_file_csv(self):
+        output = "3,5,1,0,0\n"
+        r8 = Rectangle(3, 5, 1)
+        r8.update(3, 5, 1, 0, 0)
+        Rectangle.save_to_file_csv([r8])
+        with open("Rectangle.csv", mode="r", encoding="utf-8") as myfile:
+            progOutput = myfile.read()
+            self.assertEqual(progOutput, output)
+
+    """text load_from_file_csv"""
+    def test_load_from_file_csv(self):
+        with open("Rectangle.csv", mode="w", encoding="utf-8") as myfile:
+            myfile.write("3,5,1,0,0")
+        progOutput = Rectangle.load_from_file_csv()
+        self.assertTrue(isinstance(progOutput[0], Rectangle))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -4,6 +4,7 @@ class Base
 """
 import json
 import os
+import csv
 
 
 class Base():
@@ -83,3 +84,32 @@ class Base():
             return mylist
         else:
             return mylist
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        if list_objs:
+            filename = cls.__name__ + ".csv"
+            with open(filename, mode="w", encoding="utf-8") as myfile:
+                writer = csv.writer(myfile)
+                for obj in list_objs:
+                    if cls.__name__ == "Rectangle":
+                        writer.writerow([obj.id, obj.
+                                        width, obj.height, obj.x, obj.y])
+                    elif cls.__name__ == "Square":
+                        writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = cls.__name__ + ".csv"
+        objects = []
+        with open(filename, 'r', encoding="utf-8") as myfile:
+            reader = csv.reader(myfile)
+            for line in reader:
+                if cls.__name__ == "Rectangle":
+                    id, width, height, x, y = map(int, line)
+                    obj = cls(width, height, x, y, id)
+                elif cls.__name__ == "Square":
+                    id, size, x, y = map(int, line)
+                    obj = cls(size, x, y, id)
+                objects.append(obj)
+        return objects
