@@ -63,13 +63,13 @@ class Base():
     @classmethod
     def create(cls, **dictionary):
         if cls.__name__ == "Rectangle":
-            class_ins = cls(cls.width, cls.height)
+            dummy = cls(4, 5)
         elif cls.__name__ == "Square":
-            class_ins = cls(cls.size)
+            dummy = cls(4)
         else:
             return
-        class_ins.update(**dictionary)
-        return class_ins
+        dummy.update(**dictionary)
+        return dummy
 
     @classmethod
     def load_from_file(cls):

@@ -59,8 +59,9 @@ class TestBase(unittest.TestCase):
     """ test creat method """
     def test_create(self):
         r8 = Rectangle(3, 5, 1)
+        r8.update(3, 5, 1, 0, 0)
         r8dictionary = r8.to_dictionary()
-        r8ins = Rectangle.create(**r8dictionary)
+        r8ins = r8.create(**r8dictionary)
         self.assertTrue(isinstance(r8ins, Rectangle))
 
     """ test load_from_file method """
