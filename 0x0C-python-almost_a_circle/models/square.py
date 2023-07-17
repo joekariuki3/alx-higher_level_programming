@@ -5,6 +5,7 @@ Square class inherits from Rectangle class
 get the Rectangle class
 """
 
+
 from models.rectangle import Rectangle
 
 
