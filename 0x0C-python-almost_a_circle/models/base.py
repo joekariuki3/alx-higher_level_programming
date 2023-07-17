@@ -41,6 +41,8 @@ class Base():
         jsonToSaveString = "["
         if list_objs is None:
             jsonToSave = []
+            with open(filename, mode='w', encoding='utf-8') as my_file:
+                my_file.write(jsonToSave)
         for obj in list_objs:
             dictionary = cls.to_dictionary(obj)
             jsonString = cls.to_json_string(dictionary)
