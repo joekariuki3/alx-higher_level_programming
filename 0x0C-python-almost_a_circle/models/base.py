@@ -5,6 +5,7 @@ class Base
 import json
 import os
 import csv
+import turtle as tr
 
 
 class Base():
@@ -113,3 +114,36 @@ class Base():
                     obj = cls(size, x, y, id)
                 objects.append(obj)
         return objects
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        if list_rectangles:
+            rec_dics = []
+            for rec in list_rectangles:
+                rec_dics.append(rec.to_dictionary())
+            for rec_dic in rec_dics:
+                tr.setpos(rec_dic['x'], rec_dic['y'])
+                tr.pendown()
+                tr.forward(rec_dic["width"])
+                tr.left(90)
+                tr.forward(rec_dic["height"])
+                tr.left(90)
+                tr.forward(rec_dic["width"])
+                tr.left(90)
+                tr.forward(rec_dic["height"])
+                tr.penup()
+        if list_squares:
+            sq_dics = []
+            for sq in list_squares:
+                sq_dics.append(sq.to_dictionary())
+            for sq_dic in sq_dics:
+                tr.setposition(sq_dic['x'], sq_dic['y'])
+                tr.pendown()
+                tr.forward(sq_dic["size"])
+                tr.left(90)
+                tr.forward(sq_dic["size"])
+                tr.left(90)
+                tr.forward(sq_dic["size"])
+                tr.left(90)
+                tr.forward(sq_dic["size"])
+                tr.penup()
