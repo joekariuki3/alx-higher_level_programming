@@ -37,24 +37,24 @@ class Base():
 
     @classmethod
     def save_to_file(cls, list_objs):
+        filename = cls.__name__+".json"
         jsonToSave = []
         jsonToSaveString = "["
         if list_objs is None:
-            jsonToSave = []
             with open(filename, mode='w', encoding='utf-8') as my_file:
-                my_file.write(None)
-        for obj in list_objs:
-            dictionary = cls.to_dictionary(obj)
-            jsonString = cls.to_json_string(dictionary)
-            jsonToSave.append(jsonString)
-            filename = cls.__name__+".json"
-        for index, item in enumerate(jsonToSave):
-            if index == 0:
-                jsonToSaveString += item
-            elif index != len(jsonToSave):
-                jsonToSaveString += ", " + item
-        with open(filename, mode='w', encoding='utf-8') as my_file:
-            my_file.write(jsonToSaveString+"]")
+                my_file.write(str(jsonToSave))
+        else:
+            for obj in list_objs:
+                dictionary = cls.to_dictionary(obj)
+                jsonString = cls.to_json_string(dictionary)
+                jsonToSave.append(jsonString)
+            for index, item in enumerate(jsonToSave):
+                if index == 0:
+                    jsonToSaveString += item
+                elif index != len(jsonToSave):
+                    jsonToSaveString += ", " + item
+                with open(filename, mode='w', encoding='utf-8') as my_file:
+                    my_file.write(jsonToSaveString+"]")
 
     @staticmethod
     def from_json_string(json_string):
