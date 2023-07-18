@@ -40,7 +40,7 @@ class Base():
         filename = cls.__name__+".json"
         jsonToSave = []
         jsonToSaveString = "["
-        if list_objs is None:
+        if list_objs is None or list_objs == []:
             with open(filename, mode='w', encoding='utf-8') as my_file:
                 my_file.write(str(jsonToSave))
         else:
