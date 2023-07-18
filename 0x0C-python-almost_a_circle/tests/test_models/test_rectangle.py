@@ -40,42 +40,44 @@ class TestRectangle(unittest.TestCase):
     """test width value """
     def test_width_nonInt(self):
         with self.assertRaises(TypeError):
-            TestRectangle.r4.width = "5"
+            Rectangle("1", 4)
 
     """test width value -ve """
     def test_width_negative(self):
         with self.assertRaises(ValueError):
-            TestRectangle.r4.width = -1
+            Rectangle(-1, 4)
+            Rectangle(0, 4)
 
     """test height value """
     def test_height_nonInt(self):
         with self.assertRaises(TypeError):
-            TestRectangle.r4.height = "5"
+            Rectangle(1, "4")
 
     """test height value -ve """
     def test_height_negative(self):
         with self.assertRaises(ValueError):
-            TestRectangle.r4.height = -1
+            Rectangle(1, -4)
+            Rectangle(1, 0)
 
     """test x value """
     def test_x_nonInt(self):
         with self.assertRaises(TypeError):
-            TestRectangle.r3.x = "5"
+            Rectangle(1, 4, "8", 7)
 
     """test x value -ve """
     def test_x_negative(self):
         with self.assertRaises(ValueError):
-            TestRectangle.r3.x = -1
+            Rectangle(1, 4, -8, 7)
 
     """test y value """
     def test_y_nonInt(self):
         with self.assertRaises(TypeError):
-            TestRectangle.r3.y = "5"
+            Rectangle(1, 4, 8, "7")
 
     """test y value -ve """
     def test_y_negative(self):
         with self.assertRaises(ValueError):
-            TestRectangle.r3.y = -1
+            Rectangle(1, 4, 8, -7)
 
     """ test area"""
     def test_area(self):
