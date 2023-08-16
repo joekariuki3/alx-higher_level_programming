@@ -3,4 +3,4 @@
 SELECT cities.id, cities.name, states.name
 FROM states
 INNER JOIN cities
-ON state.id = cities.state_id;
+ON states.id = cities.state_id;
