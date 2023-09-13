@@ -10,7 +10,7 @@ if (isNaN(argument)) {
     let square = '';
     for (let row = 0; row < argumentInt; row++) {
       for (let cell = 0; cell < argumentInt; cell++) {
-        square = square + 'x';
+        square = square + 'X';
       }
       if (row < argumentInt - 1) {
         square = square + '\n';
