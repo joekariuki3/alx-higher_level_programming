@@ -21,5 +21,6 @@ if __name__ == '__main__':
         connectSession = Session()
         states = connectSession.query(State).filter(State.name.contains('a'))
         for state in states:
-            connectSession.delete(state)
+            if state:
+                connectSession.delete(state)
         connectSession.commit()
