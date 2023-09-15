@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-script that list first states using sqlalchemy
+script that lists all states using sqlalchemy
 '''
 from sqlalchemy import create_engine
 from model_state import Base, State
@@ -19,8 +19,7 @@ if __name__ == '__main__':
                                passWord, databaseName))
         Session = sessionmaker(bind=engine)
         connectSession = Session()
-        state = connectSession.query(State).first()
-        if not state:
-            print("Nothing")
-        elif state:
+        states = connectSession.query(State).filter(State.name.contains('a'))
+
+        for state in states:
             print(f"{state.id}: {state.name}")
