@@ -21,5 +21,6 @@ if __name__ == '__main__':
         connectSession = Session()
         connectSession.query(State).filter(State.id == 2).update({
                                                                   State.name:
-                                                                  'New Mexico'})
+                                                                  'New Mexico'
+                                                                  })
         connectSession.commit()
