@@ -1,6 +1,11 @@
 #!/usr/bin/python3
-# script to list all cities from the database
+'''
+script to list all cities from the database
+'''
 if __name__ == '__main__':
+    '''
+    exectes only when file is run as main
+    '''
     import MySQLdb
     import sys
 
@@ -10,7 +15,7 @@ if __name__ == '__main__':
         database = sys.argv[3]
 
         # connect to the database
-        db = MySQLdb.connect(host='localhost', user=username,
+        db = MySQLdb.connect(host='localhost', port=3306, user=username,
                              passwd=password, db=database)
 
         # create a cursor to use to read info in the database
@@ -25,3 +30,5 @@ if __name__ == '__main__':
         # print states
         for state in statesList:
             print(state)
+        cur.close()
+        db.close()
