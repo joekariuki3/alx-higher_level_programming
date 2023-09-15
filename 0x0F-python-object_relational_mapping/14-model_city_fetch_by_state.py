@@ -24,4 +24,4 @@ if __name__ == '__main__':
                                                           State.id)
 
         for city in cities:
-            print(f"{city.State.name}: {city.City.id}  {city.City.name}")
+            print(f"{city.State.name}: ({city.City.id}) {city.City.name}")
