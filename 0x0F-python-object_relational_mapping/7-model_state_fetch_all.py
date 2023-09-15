@@ -4,6 +4,7 @@ script that lists all states using sqlalchemy
 '''
 from sqlalchemy import create_engine
 from model_state import Base, State
+from sqlalchemy.orm import sessionmaker
 import sys
 if __name__ == '__main__':
     '''
@@ -16,8 +17,9 @@ if __name__ == '__main__':
 
         engine = create_engine("mysql://{}:{}@localhost/{}".format(userName,
                                passWord, databaseName))
-        results = engine.execute("SELECT * FROM states ORDER BY id")
-        states = results.fetchall()
+        Session = sessionmaker(bind=engine)
+        connectSession = Session()
+        states = connectSession.query(State).all()
 
         for state in states:
-            print(f"{state[0]}: {state[1]}")
+            print(f"{state.id}: {state.name}")
