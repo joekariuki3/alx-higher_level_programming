@@ -21,7 +21,7 @@ if __name__ == '__main__':
 
         # create a cursor to use to read info in the database
         cur = db.cursor()
-        cur.execute(''' SELECT * FROM states WHERE name='{}'
+        cur.execute(''' SELECT * FROM states WHERE BINARY name='{}'
                     ORDER BY id'''.format(stateName))
         # select all info from the table state
         statesList = cur.fetchall()
