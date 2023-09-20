@@ -20,7 +20,7 @@ if __name__ == '__main__':
     # create a cursor to use to read info in the database
     cur = db.cursor()
     cur.execute('''SELECT * FROM states WHERE
-                name LIKE 'N%' ORDER BY id''')
+                BINARY name LIKE 'N%' ORDER BY id''')
 
     # select all info from the table state
     statesList = cur.fetchall()
