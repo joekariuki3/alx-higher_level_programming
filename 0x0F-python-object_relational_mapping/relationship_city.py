@@ -5,7 +5,7 @@ to work with MySQLAlchemy ORM.
 """
 
 from relationship_state import Base, State
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey 
 
 
 class City(Base):
