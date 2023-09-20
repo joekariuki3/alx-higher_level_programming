@@ -19,19 +19,12 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    All = session.query(State, City).join(City).all()
-
-    states = []
-
-    # add state to a list
-    for value in All:
-        if value.State not in states:
-            states.append(value.State)
+    All = session.query(State).outerjoin(City).all()
 
     # print each state then look for its cities
-    for state in states:
-        print(f"{state.id}: {state.name}")
-        for value in All:
-            if state.id == value.City.state_id:
-                print(f"    {value.City.id}: {value.City.name}")
+    if All:
+        for state in All:
+            print(f"{state.id}: {state.name}")
+            for city in state.cities:
+                print(f"    {city.id}: {city.name}")
     session.close()
