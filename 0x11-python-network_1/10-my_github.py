@@ -21,7 +21,6 @@ if __name__ == '__main__':
         username = argv[1]
         password = argv[2]
 
-        values = {'username': username, 'password': password}
         url = "https://api.github.com/user"
         resp = requests.get(url, auth=(username, password))
         userData = resp.json()
