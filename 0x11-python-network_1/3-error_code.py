@@ -3,6 +3,7 @@
 """
 import required modules.
 i.e : urllib.request
+      urllib.error
       sys
 """
 import sys
