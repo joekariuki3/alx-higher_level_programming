@@ -10,18 +10,24 @@ import urllib.request as request
 import urllib.parse as parse
 import sys
 
-argv = sys.argv
-if len(argv) == 3:
+if __name__ == '__main__':
     """
-    if 2 arguments are passes 1st url 2nd email
-    """
-    url = argv[1]
-    email = argv[2]
+    if executed as main
 
-    if __name__ == '__main__':
+    script that takes in a URL and an email
+    sends a POST request to the passed URL with the email
+    as a parameter, and displays the body of the
+    response (decoded in utf-8)
+    """
+    argv = sys.argv
+    if len(argv) == 3:
         """
-        if executed as main
+        if 2 arguments are passes
+        1st url 2nd email
         """
+        url = argv[1]
+        email = argv[2]
+
         # creat a dictionary of data to pass to server
         values = {'email': email}
 
