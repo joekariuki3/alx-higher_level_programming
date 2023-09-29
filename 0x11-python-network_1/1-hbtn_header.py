@@ -10,12 +10,14 @@ import sys
 
 if __name__ == '__main__':
     """
-    execute only if run as main
+    execute only if
+    run as main
     """
     argv = sys.argv
     if len(argv) == 2:
         """
-        if first argument is passed save it as url
+        if first argument is passed
+        save it as url
         """
         url = argv[1]
 
