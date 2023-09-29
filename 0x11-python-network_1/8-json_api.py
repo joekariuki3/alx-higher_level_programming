@@ -1,18 +1,14 @@
 #!/usr/bin/python3
 
 """
-import required modules
-requests
-sys
+import required modules: requests, sys
 """
 import requests
 import sys
 
-
 if __name__ == '__main__':
     """
     only execute when run as main
-
     script to get json data depending on the passed value
     using post method
     """
