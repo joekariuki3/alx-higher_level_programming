@@ -22,12 +22,10 @@ if __name__ == '__main__':
         username = argv[2]
 
         url = f"https://api.github.com/repos/{username}/{repoName}/commits"
-        resp = requests.get(url)
+        values = {'per_page': 10}
+        resp = requests.get(url, params=values)
         Alldata = resp.json()
-        i = 0
+
         for d in Alldata:
-            if i == 10:
-                break
             p = f"{d.get('sha')}:{d.get('commit').get('author').get('name')}"
             print(p)
-            i = i + 1
