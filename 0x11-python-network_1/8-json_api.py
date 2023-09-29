@@ -29,4 +29,4 @@ if __name__ == '__main__':
     elif len(jsonData) > 0:
         print(f"[{jsonData['id']}] {jsonData['name']}")
     else:
-        print("Not a valid JSON")        
+        print("Not a valid JSON")
