@@ -27,6 +27,8 @@ if __name__ == '__main__':
     if len(jsonData) == 0:
         print("No result")
     elif len(jsonData) > 0:
-        print(f"[{jsonData['id']}] {jsonData['name']}")
+        id = jsonData.get('id')
+        name = jsonData.get('name')
+        print(f"[{id}] {name}")
     else:
         print("Not a valid JSON")
