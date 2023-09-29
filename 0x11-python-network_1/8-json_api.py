@@ -20,11 +20,11 @@ if __name__ == '__main__':
     url = 'http://0.0.0.0:5000/search_user'
     resp = requests.post(url, data=values)
     jsonData = resp.json()
-    if len(jsonData) == 0:
-        print("No result")
-    elif len(jsonData) > 0:
+    if len(jsonData) > 0:
         id = jsonData.get('id')
         name = jsonData.get('name')
         print(f"[{id}] {name}")
+    elif len(jsonData) == 0:
+        print("No result")
     else:
         print("Not a valid JSON")
