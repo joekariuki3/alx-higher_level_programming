@@ -5,7 +5,7 @@ import required modules.
 i.e : urllib.request
       sys
 """
-import urllib
+import urllib.request
 import sys
 
 if __name__ == '__main__':
@@ -20,5 +20,6 @@ if __name__ == '__main__':
         url = argv[1]
 
         with urllib.request.urlopen(url) as response:
-            headerValue = response.getheader('X-Request-Id')
+            headerDict = dict(response.headers)
+        headerValue = headerDict.get('X-Request-Id')
         print(headerValue)
