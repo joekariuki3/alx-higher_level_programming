@@ -26,6 +26,9 @@ if __name__ == '__main__':
         resp = requests.get(url, params=values)
         Alldata = resp.json()
 
-        for d in Alldata:
-            p = f"{d.get('sha')}: {d.get('commit').get('author').get('name')}"
-            print(p)
+        for data in Alldata:
+            sha = data.get('sha')
+            commit = data.get('commit')
+            author = commit.get('author')
+            authorName = author.get('name')
+            print(f"{sha}: {authorName}")
