@@ -27,5 +27,5 @@ if __name__ == '__main__':
         Alldata = resp.json()
 
         for d in Alldata:
-            p = f"{d.get('sha')}:{d.get('commit').get('author').get('name')}"
+            p = f"{d.get('sha')}: {d.get('commit').get('author').get('name')}"
             print(p)
