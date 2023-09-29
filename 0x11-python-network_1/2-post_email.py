@@ -1,19 +1,13 @@
 #!/usr/bin/python3
 
-"""
-import required headers
-urllib.request
-urllib.parse
-sys
-"""
 import urllib.request as request
 import urllib.parse as parse
 import sys
 
+
 if __name__ == '__main__':
     """
     if executed as main
-
     script that takes in a URL and an email
     sends a POST request to the passed URL with the email
     as a parameter, and displays the body of the
