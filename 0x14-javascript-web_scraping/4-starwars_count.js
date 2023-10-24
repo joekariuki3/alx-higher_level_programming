@@ -20,7 +20,9 @@ function printmovie (url, urluser) {
         }
       }
     }
-    console.log(count);
+    if (count > 0) {
+      console.log(count);
+    }
   });
 }
 if (process.argv[2]) {
