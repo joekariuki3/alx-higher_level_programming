@@ -3,7 +3,7 @@
 
 const request = require('request');
 
-function printmovie (url, urluser) {
+function printmovie (url, userId) {
   request(url, function (error, response, body) {
     if (error) {
       console.log(error);
@@ -15,7 +15,8 @@ function printmovie (url, urluser) {
       const characters = alljsondata[i].characters;
       for (let j = 0; j < characters.length; j++) {
         const character = characters[j];
-        if (character === urluser) {
+        const charList = character.split('/');
+        if (charList.includes(userId)) {
           count++;
         }
       }
@@ -25,6 +26,6 @@ function printmovie (url, urluser) {
 }
 if (process.argv[2]) {
   const url = process.argv[2];
-  const urluser = 'https://swapi-api.alx-tools.com/api/people/18/';
-  printmovie(url, urluser);
+  const userId = '18';
+  printmovie(url, userId);
 }
