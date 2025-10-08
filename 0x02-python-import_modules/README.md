@@ -1,48 +1,55 @@
-## 0x02. Python - import & modules
+## 0x02. Python — Import & Modules
 
-Focus on modularity, namespace management, argument handling from CLI, and dynamic imports.
+> Building modular programs: organizing code, controlling namespaces, and handling CLI arguments.
 
-## 📌 Learning Objectives
+## Overview
 
-- Why modules matter (reuse, organization)
-- Using `import`, `from ... import`, and aliasing
-- Discovering available names via `dir()`
-- Executing code conditionally under `if __name__ == "__main__":`
-- Parsing command-line arguments (`sys.argv`)
-- Basics of creating a custom module
+Introduces splitting logic across files, safe entry points, argument parsing via `sys.argv`, and dynamic symbol discovery. Reinforces avoiding namespace pollution while enabling reuse.
 
-## 📂 Files
+## Learning Objectives
 
-| File                       | Description                                 |
-| -------------------------- | ------------------------------------------- |
-| `0-add.py`                 | Imports a function and prints sum           |
-| `1-calculation.py`         | Imports multiple arithmetic functions       |
-| `2-args.py`                | Prints argument count & list                |
-| `3-infinite_add.py`        | Adds all integer arguments                  |
-| `4-hidden_discovery.py`    | Lists names in a module excluding dunders   |
-| `5-variable_load.py`       | Imports variable from module and prints it  |
-| `100-my_calculator.py`     | CLI calculator dispatching operations       |
-| `101-easy_print.py`        | One-liner print using external module trick |
-| `102-magic_calculation.py` | Matches given bytecode behavior             |
-| `103-fast_alphabet.py`     | Efficient alphabet printing                 |
-| `hidden_4.pyc`             | Compiled Python bytecode (ignored in logic) |
+- Use `import`, selective `from ... import`, and aliases
+- Inspect available names with `dir()`
+- Protect executable blocks with `if __name__ == "__main__":`
+- Parse command‑line arguments (`sys.argv` basics)
+- Structure a lightweight calculator dispatcher
 
-## 🔍 Notable Techniques
+## Task Index
 
-- Avoiding wildcard imports to preserve clarity
-- Leveraging `sys.modules` understanding (intro level)
-- Encapsulation of logic behind `__name__ == '__main__'`
+| File                       | Purpose                               |
+| -------------------------- | ------------------------------------- |
+| `0-add.py`                 | Import function & print sum           |
+| `1-calculation.py`         | Import multiple arithmetic functions  |
+| `2-args.py`                | Print argument count & list           |
+| `3-infinite_add.py`        | Sum all integer args                  |
+| `4-hidden_discovery.py`    | List non‑dunder names                 |
+| `5-variable_load.py`       | Import variable and display           |
+| `100-my_calculator.py`     | CLI operation dispatcher              |
+| `101-easy_print.py`        | Indirect print via module side effect |
+| `102-magic_calculation.py` | Recreate logic from bytecode          |
+| `103-fast_alphabet.py`     | Efficient alphabet output             |
 
-## 🧪 Validation
+## Usage
 
-Invoke scripts with various arguments and compare outputs to specifications.
+```bash
+python3 3-infinite_add.py 10 20 7
+python3 100-my_calculator.py 3 + 5
+```
 
-## 📎 Resources
+## Key Concepts
 
-See `resources.md` for reading list (imports, packaging basics).
+- Explicit imports > wildcard clarity
+- Entry point guard prevents unintended execution
+- Dynamic discovery encourages introspection skills
 
-## 🗒 Reflection
+## Testing / Validation
 
-This unit emphasized controlling execution side effects and reusability.
+Run scripts with varying argument counts, invalid operators for calculator, and verify graceful error messaging.
 
----
+## Resources
+
+See `resources.md` for import system references & packaging primers.
+
+## Reflection
+
+Modularity here lays the foundation for maintainability and future packaging.

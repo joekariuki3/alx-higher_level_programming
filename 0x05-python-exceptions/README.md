@@ -1,44 +1,54 @@
-## 0x05. Python - Exceptions
+## 0x05. Python — Exceptions
 
-Error handling patterns: anticipating, raising, and recovering from runtime issues while preserving program stability.
+> Anticipating, raising, and handling runtime errors to preserve stability & clarity.
 
-## 📌 Learning Objectives
+## Overview
 
-- Difference between errors and exceptions
-- Using `try / except / else / finally`
-- Specific vs broad exception catching
-- Why not to use bare `except:`
-- Raising built‑ins vs custom exceptions
-- Printing to stderr vs stdout
+Introduces structured error handling using `try/except/else/finally`, deliberate raising for validation, and safe execution wrappers—building resilience into small scripts.
 
-## 📂 Files
+## Learning Objectives
 
-| File                            | Description                                      |
-| ------------------------------- | ------------------------------------------------ |
-| `0-safe_print_list.py`          | Safely print x elements of a list                |
-| `1-safe_print_integer.py`       | Safely print an integer with formatting          |
-| `2-safe_print_list_integers.py` | Print first x ints (skip non‑ints)               |
-| `3-safe_print_division.py`      | Division with finally and result capture         |
-| `4-list_division.py`            | Element-wise division with robust error handling |
-| `5-raise_exception.py`          | Raise a `TypeError` deliberately                 |
-| `6-raise_exception_msg.py`      | Raise a `NameError` with custom message          |
-| `100-safe_print_integer_err.py` | Print integer or write error to stderr           |
-| `101-safe_function.py`          | Execute a function safely and capture exceptions |
+- Distinguish errors vs exceptions
+- Apply `try / except / else / finally` blocks effectively
+- Target specific exception types over broad catches
+- Avoid bare `except:` anti-pattern
+- Raise built‑ins (TypeError, NameError) intentionally
+- Print diagnostics to stderr when appropriate
 
-## 🧠 Key Concepts
+## Task Index
 
-- Separation of normal flow and error flow
-- Granular exception targeting improves diagnostics
-- Use of `finally` for guaranteed cleanup paths
+| File                            | Purpose                       |
+| ------------------------------- | ----------------------------- |
+| `0-safe_print_list.py`          | Safely print x elements       |
+| `1-safe_print_integer.py`       | Safely print integer          |
+| `2-safe_print_list_integers.py` | Print first x ints only       |
+| `3-safe_print_division.py`      | Division with finally cleanup |
+| `4-list_division.py`            | Element-wise guarded division |
+| `5-raise_exception.py`          | Raise TypeError demo          |
+| `6-raise_exception_msg.py`      | Raise NameError w/ message    |
+| `100-safe_print_integer_err.py` | Print or log error to stderr  |
+| `101-safe_function.py`          | Execute function safely       |
 
-## 🧪 Testing Ideas
+## Usage
 
-Feed malformed lists, zero divisors, non‑callables to `101-safe_function`.
+```bash
+python3 4-list_division.py
+```
 
-## 📎 Resources
+## Key Concepts
 
-See `resources.md` for links on Python exception hierarchy.
+- Separation of normal vs exceptional control paths
+- Granular exception handling improves diagnostics
+- `finally` ensures resource or state cleanup
 
-## 🗒 Reflection
+## Testing / Validation
 
-Structured error handling improves reliability and clarity when failures occur.
+Feed: non‑int elements, division by zero, functions that raise internally to `101-safe_function` and observe captured errors.
+
+## Resources
+
+See `resources.md` for Python exception hierarchy references.
+
+## Reflection
+
+Clear, minimal exception handling scaffolds scale as logic complexity grows.

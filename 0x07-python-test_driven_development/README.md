@@ -1,40 +1,52 @@
-## 0x07. Python - Test-driven Development (TDD)
+## 0x07. Python — Test Driven Development (TDD)
 
-Introduction to specifying behavior before (or alongside) implementation using doctests and unit tests.
+> Writing expectations (tests/doctests) to guide and validate implementation.
 
-## 📌 Learning Objectives
+## Overview
 
-- What TDD means conceptually
-- Using doctest style in text files
-- Structuring pure functions for easier testing
-- Handling edge cases explicitly
+Introduces documenting behavior with doctests and focused unit tests before (or alongside) code. Emphasizes pure functions, explicit validation, and edge case handling to reduce ambiguity.
 
-## 📂 Files
+## Learning Objectives
 
-| File                    | Description                                             |
-| ----------------------- | ------------------------------------------------------- |
-| `0-add_integer.py`      | Adds two ints/floats with type checks                   |
-| `2-matrix_divided.py`   | Divide matrix values with validation                    |
-| `3-say_my_name.py`      | Formatted name output with validation                   |
-| `4-print_square.py`     | Print square of `#` characters                          |
-| `5-text_indentation.py` | Format text with indentation after punctuation          |
-| `6-max_integer.py`      | Return max integer (with test file)                     |
-| `tests/`                | Contains `.txt` doctest specs & `6-max_integer_test.py` |
+- Explain core TDD loop (red → green → refactor)
+- Author doctests for simple examples
+- Use `unittest` for structured assertions
+- Separate I/O from logic for testability
+- Validate and sanitize inputs defensively
 
-## 🧪 Testing Tools
+## Task Index
 
-- Doctest for simple I/O examples
-- Custom unittest module usage in `6-max_integer_test.py`
+| File                    | Purpose                                        |
+| ----------------------- | ---------------------------------------------- |
+| `0-add_integer.py`      | Add two numbers with type checks               |
+| `2-matrix_divided.py`   | Divide matrix elements safely                  |
+| `3-say_my_name.py`      | Format name with validation                    |
+| `4-print_square.py`     | Print square using `#`                         |
+| `5-text_indentation.py` | Reformat text after punctuation                |
+| `6-max_integer.py`      | Return max integer                             |
+| `tests/`                | Doctest `.txt` specs & `6-max_integer_test.py` |
 
-## 🔍 Notable Concepts
+## Usage
 
-- Defensive programming via explicit type checks
-- Separation of concerns (I/O vs logic)
+```bash
+python3 -m doctest -v tests/*.txt
+python3 -m unittest tests/6-max_integer_test.py
+```
 
-## 📎 Resources
+## Key Concepts
 
-See `resources.md` for TDD guides.
+- Deterministic pure functions ease testing
+- Early failing tests clarify required behavior
+- Input validation prevents silent logical errors
 
-## 🗒 Reflection
+## Testing / Validation
 
-Writing expected behavior first surfaces ambiguity earlier.
+Run doctests for quick syntax/behavior checks, then targeted `unittest` for edge cases (empty list, single element, negatives, non‑int inputs triggering errors).
+
+## Resources
+
+See `resources.md` for TDD guides and Python testing docs.
+
+## Reflection
+
+TDD here enforces deliberate API design and encourages small, composable functions.

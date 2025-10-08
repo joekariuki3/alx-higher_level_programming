@@ -1,53 +1,62 @@
-## 0x04. Python - More Data Structures: Set, Dictionary
+## 0x04. Python — More Data Structures (Set, Dict)
 
-Expands data manipulation with hashing structures and advanced iteration patterns.
+> Leveraging hashing structures for fast membership, counting, and transformation tasks.
 
-## 📌 Learning Objectives
+## Overview
 
-- Set operations: union, intersection, difference
-- Dictionary creation, updating, iteration patterns
-- Comprehensions for sets & dicts
-- Handling key errors safely
-- Basic algorithmic counting / transformation with dicts
+Extends sequence knowledge with sets & dictionaries, emphasizing O(1) lookups, safe mutation patterns, and functional style transformations via comprehension and mapping.
 
-## 📂 Files
+## Learning Objectives
 
-| File                           | Description                                  |
-| ------------------------------ | -------------------------------------------- |
-| `0-square_matrix_simple.py`    | Map function over matrix (new matrix)        |
-| `1-search_replace.py`          | Replace occurrences of value in list         |
-| `2-uniq_add.py`                | Sum unique integers                          |
-| `3-common_elements.py`         | Intersection of two sets                     |
-| `4-only_diff_elements.py`      | Symmetric difference of sets                 |
-| `5-number_keys.py`             | Count dictionary keys                        |
-| `6-print_sorted_dictionary.py` | Print dict ordered by keys                   |
-| `7-update_dictionary.py`       | Insert/update key-value                      |
-| `8-simple_delete.py`           | Delete key safely                            |
-| `9-multiply_by_2.py`           | Double values in dictionary                  |
-| `10-best_score.py`             | Find key with highest value                  |
-| `11-multiply_list_map.py`      | Multiply list contents using `map`           |
-| `12-roman_to_int.py`           | Convert Roman numerals to int                |
-| `100-weight_average.py`        | Weighted average calculation                 |
-| `101-square_matrix_map.py`     | Matrix square using `map` (functional style) |
-| `102-complex_delete.py`        | Delete keys by matching value                |
-| `103-python.c`                 | C extension exploring Python object model    |
+- Perform set algebra (union, intersection, symmetric difference)
+- Create/update/iterate dictionaries safely
+- Use set & dict comprehensions for concise transforms
+- Avoid mutating containers while iterating
+- Implement basic counting/aggregation patterns
 
-## 🔍 Notable Patterns
+## Task Index
 
-- Leveraging hashing for O(1) membership tests
-- Avoiding mutation during iteration (create new container)
-- Safe dictionary access with `dict.get`
+| File                           | Purpose                              |
+| ------------------------------ | ------------------------------------ |
+| `0-square_matrix_simple.py`    | Map over matrix producing new matrix |
+| `1-search_replace.py`          | Replace occurrences of a value       |
+| `2-uniq_add.py`                | Sum unique integers                  |
+| `3-common_elements.py`         | Intersection of two sets             |
+| `4-only_diff_elements.py`      | Symmetric difference                 |
+| `5-number_keys.py`             | Count dictionary keys                |
+| `6-print_sorted_dictionary.py` | Print dict ordered by keys           |
+| `7-update_dictionary.py`       | Insert/update key:value              |
+| `8-simple_delete.py`           | Safe key deletion                    |
+| `9-multiply_by_2.py`           | Value doubling copy                  |
+| `10-best_score.py`             | Key with max value                   |
+| `11-multiply_list_map.py`      | Multiply list via map                |
+| `12-roman_to_int.py`           | Roman numeral conversion             |
+| `100-weight_average.py`        | Weighted average                     |
+| `101-square_matrix_map.py`     | Functional matrix square             |
+| `102-complex_delete.py`        | Delete keys by value match           |
+| `103-python.c`                 | C exploration of object model        |
 
-## 🧪 Validation
+## Usage
 
-Edge cases: empty sets, non-existent keys, Roman numeral edge patterns (`IV`, `IX`, repeats).
+```bash
+python3 12-roman_to_int.py
+python3 10-best_score.py
+```
 
-## 📎 Resources
+## Key Concepts
 
-See `resources.md` for algorithmic references.
+- Hash-based membership efficiency
+- Defensive copying vs in-place edits
+- Comprehensions for readability & performance
 
-## 🗒 Reflection
+## Testing / Validation
 
-Sets and dictionaries drastically reduce complexity for membership & counting tasks.
+Edge cases: empty set/dict, Roman subtractive pairs (`IV`, `IX`), repeated symbols, deleting non-existent keys.
 
----
+## Resources
+
+See `resources.md` for deeper algorithmic references.
+
+## Reflection
+
+Mastery of sets & dicts reduces algorithmic complexity in later projects.

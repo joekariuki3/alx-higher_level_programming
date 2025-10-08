@@ -1,43 +1,54 @@
-## 0x06. Python - Classes and Objects
+## 0x06. Python — Classes & Objects
 
-Foundation of object orientation in Python, iterative improvement of a `Square` class.
+> Progressive construction of a `Square` class illustrates encapsulation, validation, and dunder method usage.
 
-## 📌 Learning Objectives
+## Overview
 
-- Defining classes & instances
-- Instance vs class attributes
-- Encapsulation with getters/setters & `@property`
-- `__init__`, `__str__`, `__repr__`, `__del__` basics
-- Simple data validation inside setters
+Introduces foundational OOP constructs in Python via iterative file progression—each adding one concern (validation, representation, comparison) to keep changes focused and traceable.
 
-## 📂 Files
+## Learning Objectives
 
-| File                        | Description                                 |
-| --------------------------- | ------------------------------------------- |
-| `0-square.py`               | Minimal empty class definition              |
-| `1-square.py`               | Private size attribute with init            |
-| `2-square.py`               | Size validation                             |
-| `3-square.py`               | Area method                                 |
-| `4-square.py`               | Property getter/setter for size             |
-| `5-square.py`               | Print square with `#` chars                 |
-| `6-square.py`               | Position attribute & adjusted printing      |
-| `100-singly_linked_list.py` | Implementation of sorted singly linked list |
-| `101-square.py`             | Richer string representation                |
-| `102-square.py`             | Comparison operators based on area          |
+- Define classes & instantiate objects
+- Differentiate instance vs class attributes
+- Use `@property` for controlled access & validation
+- Implement dunder methods: `__init__`, `__str__`, `__repr__`, comparisons
+- Enforce invariants (positive integers) in setters
 
-## 🔍 Notable Patterns
+## Task Index
 
-- Progressive enhancement iteration per file
-- Data hiding & validation to prevent invalid state
+| File                        | Purpose                        |
+| --------------------------- | ------------------------------ |
+| `0-square.py`               | Minimal empty class            |
+| `1-square.py`               | Private size attr init         |
+| `2-square.py`               | Size validation logic          |
+| `3-square.py`               | Area computation               |
+| `4-square.py`               | Property getter/setter         |
+| `5-square.py`               | Textual square printing        |
+| `6-square.py`               | Position offsets in print      |
+| `100-singly_linked_list.py` | Sorted singly linked list impl |
+| `101-square.py`             | Enhanced string form           |
+| `102-square.py`             | Rich comparison by area        |
 
-## 🧪 Validation
+## Usage
 
-Instantiate squares with invalid sizes to ensure `TypeError` / `ValueError` raised.
+```bash
+python3 5-square.py
+```
 
-## 📎 Resources
+## Key Concepts
 
-See `resources.md` for OOP primers.
+- Encapsulation via private attributes
+- Data validation centralization
+- Rich comparisons to enable natural ordering
 
-## 🗒 Reflection
+## Testing / Validation
 
-Incremental layering clarifies how behavior accumulates across versions.
+Instantiate with invalid sizes (negative, non‑int) expect `TypeError` / `ValueError`. Compare two squares for ordering semantics.
+
+## Resources
+
+See `resources.md` for OOP primers & property patterns.
+
+## Reflection
+
+Layered evolution makes each responsibility explicit and testable.

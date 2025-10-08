@@ -1,67 +1,67 @@
-# 0x00. Python - Hello, World
+## 0x00. Python — Hello, World
 
-Foundational introduction to Python syntax, execution models, basic I/O, string manipulation, and simple compilation/bytecode concepts.
+> First contact with Python: execution modes, basic I/O, formatting, and a glimpse under the hood (bytecode + a C helper).
 
-## 📌 Learning Objectives
+## Overview
 
-By the end of this project I could explain:
+Establishes the mechanics of running Python in multiple ways (inline, file, executable script), reinforces clean output formatting, and introduces minimal introspection + a supporting C snippet to encourage awareness of lower-level representations early.
 
-- How to run Python scripts in different ways (`python3 file.py`, inline, executable bit)
-- What the Python interpreter does
-- The role of the `.pyc` / bytecode and how to inspect it (briefly)
-- Basic printing, string literals, escaping, and concatenation
-- Simple integer and float formatting
-- How to write and run a simple C function helper (cycle checking)
+## Learning Objectives
 
-## 📂 Files
+- Run Python via script file, inline env var, and executable bit
+- Understand role of the interpreter & `.pyc` bytecode
+- Use print formatting for strings, ints, floats
+- Perform slicing & concatenation idiomatically
+- Compile & inspect simple bytecode (`dis` module)
+- Build/compile a tiny C helper (`check_cycle`)
 
-| File                       | Description                                                   |
-| -------------------------- | ------------------------------------------------------------- |
-| `0-run`                    | Shell script to run a Python script stored in `$PYFILE`       |
-| `1-run_inline`             | Shell script to execute Python code from an env var `$PYCODE` |
-| `2-print.py`               | Prints a simple string in Python                              |
-| `3-print_number.py`        | Demonstrates printing integers with f-strings / format        |
-| `4-print_float.py`         | Formats a float to specific precision                         |
-| `5-print_string.py`        | String repetition & slicing basics                            |
-| `6-concat.py`              | Concatenates strings into a full sentence                     |
-| `7-edges.py`               | String indexing and slicing practice                          |
-| `8-concat_edges.py`        | Advanced slicing to build a phrase                            |
-| `9-easter_egg.py`          | Prints “The Zen of Python” via `this` module                  |
-| `10-check_cycle.c`         | C function to detect linked list cycle (with `lists.h`)       |
-| `100-write.py`             | Writes output to stderr / file descriptor usage               |
-| `101-compile`              | Script to compile Python file to bytecode                     |
-| `102-magic_calculation.py` | Function stub matching given bytecode                         |
-| `lists.h`                  | Header for singly linked list structure used in cycle check   |
-| `resources.md`             | curated learning links                                        |
+## Task Index
 
-## 🛠 Usage Examples
+| File / Script              | Purpose                                         |
+| -------------------------- | ----------------------------------------------- |
+| `0-run`                    | Execute a Python file referenced by `$PYFILE`   |
+| `1-run_inline`             | Execute Python code stored in `$PYCODE` env var |
+| `2-print.py`               | Basic string output                             |
+| `3-print_number.py`        | Integer printing & formatting                   |
+| `4-print_float.py`         | Float precision formatting                      |
+| `5-print_string.py`        | Repetition & slicing demonstration              |
+| `6-concat.py`              | String concatenation into sentence              |
+| `7-edges.py`               | Indexing & slice practice                       |
+| `8-concat_edges.py`        | Construct phrase through slices                 |
+| `9-easter_egg.py`          | Prints the Zen of Python                        |
+| `10-check_cycle.c`         | Linked list cycle detection (C)                 |
+| `lists.h`                  | Struct & prototype for cycle helper             |
+| `100-write.py`             | Direct write to stderr/file descriptor          |
+| `101-compile`              | Produce bytecode from source                    |
+| `102-magic_calculation.py` | Recreate logic from given bytecode              |
+| `resources.md`             | Curated references & notes                      |
+
+## Usage
 
 ```bash
 python3 2-print.py
-./0-run        # if executable
-./1-run_inline # after exporting PYCODE
+chmod +x 0-run && ./0-run
+export PYCODE='print("Inline!" )' && ./1-run_inline
+gcc -Wall -Werror -Wextra -pedantic 10-check_cycle.c lists.h -o check_cycle
 ```
 
-## 🔍 Notable Concepts
+## Key Concepts
 
-- Importance of readable output formatting
-- Distinction between printing vs returning values
-- Intro to debugging using prints
+- Multiple execution pathways reinforce environment understanding
+- Formatting vs concatenation tradeoffs
+- Early exposure to bytecode fosters curiosity about internals
+- Simple C interplay contextualizes Python abstractions
 
-## 🧪 Validation
+## Testing / Validation
 
-Manual comparison of outputs against expected results. Bytecode tasks verified with `python3 -m py_compile` or `python3 -c 'import dis; dis.dis(...)'`.
+- Manual stdout comparison for early scripts
+- `python3 -m py_compile` or `dis.dis()` for bytecode tasks
+- Compile C helper with strict flags; run against crafted cyclic / acyclic lists
 
-## 🚧 Potential Improvements
+## Resources
 
-- Include a tiny Python unit test for formatting scripts
+See `resources.md` for official docs, articles, and distilled notes.
 
-## 📎 Resources
+## Reflection
 
-See `resources.md` for references used.
-
-## 🗒 Reflection
-
-This project set the tone for emphasizing clarity and Pythonic idioms early on.
-
----
+Clarity > cleverness at this stage; patterns here seed consistency for later, more complex modules.

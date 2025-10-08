@@ -1,51 +1,64 @@
-## 0x03. Python - Data Structures: Lists, Tuples
+## 0x03. Python — Data Structures: Lists & Tuples
 
-Introduction to Python sequence types and their idiomatic operations.
+> Practical exploration of Python's core sequence types with emphasis on mutability, safe modification, and idiomatic traversal.
 
-## 📌 Learning Objectives
+## Overview
 
-- Differences between lists and tuples
-- When to use each (mutability vs fixed structure)
-- Indexing, slicing, iteration patterns
-- Copying vs referencing (shallow behavior)
-- Returning multiple values via tuples
-- Basic algorithmic operations using these structures
+This module drills comfortable manipulation of ordered collections. It contrasts list mutability with tuple immutability, emphasizes when to copy vs mutate in place, and sets groundwork for later set/dict operations.
 
-## 📂 Files
+## Learning Objectives
 
-| File                               | Description                           |
-| ---------------------------------- | ------------------------------------- |
-| `0-print_list_integer.py`          | Print all integers in a list          |
-| `1-element_at.py`                  | Safe retrieval of element by index    |
-| `2-replace_in_list.py`             | Replace element at position           |
-| `3-print_reversed_list_integer.py` | Print list in reverse                 |
-| `4-new_in_list.py`                 | Return modified copy (non-mutating)   |
-| `5-no_c.py`                        | Remove 'c' and 'C' from string        |
-| `6-print_matrix_integer.py`        | Nicely format matrix of integers      |
-| `7-add_tuple.py`                   | Add elements of two tuples safely     |
-| `8-multiple_returns.py`            | Return tuple (len, first char)        |
-| `9-max_integer.py`                 | Find maximum integer in list          |
-| `10-divisible_by_2.py`             | Boolean list of divisibility by 2     |
-| `11-delete_at.py`                  | Delete element at index               |
-| `12-switch.py`                     | Swap variable values                  |
-| `100-print_python_list_info.c`     | C introspection of Python list object |
+- Distinguish lists vs tuples (mutability, typical use cases)
+- Perform indexing, slicing, reversing, and safe replacement
+- Avoid unintended side effects via defensive copying
+- Return structured data (multiple values) via tuples
+- Implement simple algorithms using sequence operations
 
-## 🧠 Key Concepts Reinforced
+## Task Index
 
-- Mutability & side effects
-- Creating non-mutating helpers for safer patterns
-- Efficient traversal & formatting
+| File                               | Purpose                                  |
+| ---------------------------------- | ---------------------------------------- |
+| `0-print_list_integer.py`          | Print integers in list (basic iteration) |
+| `1-element_at.py`                  | Safe element access with bounds handling |
+| `2-replace_in_list.py`             | In-place element replacement             |
+| `3-print_reversed_list_integer.py` | Reverse‑order printing                   |
+| `4-new_in_list.py`                 | Non‑mutating replacement (copy variant)  |
+| `5-no_c.py`                        | Filter characters from string            |
+| `6-print_matrix_integer.py`        | Matrix formatting output                 |
+| `7-add_tuple.py`                   | Safe tuple element‑wise addition         |
+| `8-multiple_returns.py`            | Tuple return (length, first char)        |
+| `9-max_integer.py`                 | Manual max search                        |
+| `10-divisible_by_2.py`             | Boolean mask for divisibility            |
+| `11-delete_at.py`                  | Delete by index carefully                |
+| `12-switch.py`                     | Swap variable values (Pythonic)          |
+| `100-print_python_list_info.c`     | C introspection of list object           |
 
-## 🧪 Validation
+## Usage
 
-Quick REPL assertions and edge case tests (empty list, single element, out-of-range indices).
+```bash
+python3 3-print_reversed_list_integer.py
+python3 6-print_matrix_integer.py
+gcc -Wall -Werror -Wextra -pedantic 100-print_python_list_info.c -o list_info \
+	&& ./list_info
+```
 
-## 📎 Resources
+## Key Concepts
 
-See `resources.md` for concept deep dives.
+- Mutability & reference semantics
+- Defensive copying vs in-place edits
+- Sequence traversal patterns (forward, reverse, matrix)
+- Tuple packing/unpacking for readable returns
 
-## 🗒 Reflection
+## Testing / Validation
 
-Understanding references and copies is foundational for later data handling correctness.
+- Manual REPL checks for edge cases (empty list, single element, out-of-range index)
+- Custom crafted matrices to verify formatting
+- C helper compiled with strict flags; run to inspect structure metadata
 
----
+## Resources
+
+See `resources.md` for deeper dives and supporting references.
+
+## Reflection
+
+Mastering mutation vs copy semantics here reduces bugs in later data manipulation and algorithmic tasks.

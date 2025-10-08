@@ -1,58 +1,66 @@
-## 0x01. Python - if/else, loops, functions
+## 0x01. Python — if/else, loops, functions
 
-Control flow fundamentals and the introduction of user-defined functions.
+> Core control flow patterns + first reusable functions; shifts thinking from linear code to structured branching.
 
-## 📌 Learning Objectives
+## Overview
 
-- Difference between `if`, `elif`, `else`
-- Looping with `for` vs `while`
-- Using `range()` effectively
-- Handling negative numbers / modulo edge cases
-- Function definition, parameters, return values
-- Basic string and numeric operations in loop bodies
+Builds fluency with conditional logic, looping constructs, and encapsulation of behavior inside functions. Introduces small algorithmic patterns (classification, formatting, numeric transforms) and a C helper to reinforce data handling rigor.
 
-## 📂 Files
+## Learning Objectives
 
-| File                        | Description                                        |
-| --------------------------- | -------------------------------------------------- |
-| `0-positive_or_negative.py` | Classify a random number as positive/negative/zero |
-| `1-last_digit.py`           | Extract last digit and compare conditions          |
-| `2-print_alphabet.py`       | Print lowercase alphabet on one line               |
-| `3-print_alphabt.py`        | Alphabet excluding specific letters                |
-| `4-print_hexa.py`           | Numbers with hexadecimal equivalents               |
-| `5-print_comb2.py`          | All numbers 00–99 with formatting                  |
-| `6-print_comb3.py`          | Unique digit pairs ascending                       |
-| `7-islower.py`              | Custom function to test lowercase                  |
-| `8-uppercase.py`            | Convert string to uppercase (without built-ins)    |
-| `9-print_last_digit.py`     | Return & print last digit of a number              |
-| `10-add.py`                 | Add two integers function                          |
-| `11-pow.py`                 | Power function implementation                      |
-| `12-fizzbuzz.py`            | Classic FizzBuzz implementation                    |
-| `13-insert_number.c`        | Insert into a sorted singly linked list (C)        |
-| `100-print_tebahpla.py`     | Reverse alternating case alphabet                  |
-| `101-remove_char_at.py`     | Create copy of string without char at index        |
-| `102-magic_calculation.py`  | Bytecode reproduction function                     |
-| `resources.md`              | Curated links for loops & functions                |
+- Differentiate `if` / `elif` / `else` roles
+- Choose `for` vs `while` appropriately
+- Use `range()` idiomatically (bounds, step, reverse)
+- Handle modulo & negatives correctly
+- Define simple, pure functions (parameters, returns)
+- Apply loops to string & numeric processing
 
-## 🧠 Key Concepts Reinforced
+## Task Index
 
-- Branch coverage and ensuring all logical paths
-- Clean function design (single responsibility)
-- Avoiding off-by-one errors
+| File                        | Purpose                                      |
+| --------------------------- | -------------------------------------------- |
+| `0-positive_or_negative.py` | Classify sign of random integer              |
+| `1-last_digit.py`           | Extract & evaluate last digit                |
+| `2-print_alphabet.py`       | Print lowercase alphabet                     |
+| `3-print_alphabt.py`        | Alphabet excluding specific letters          |
+| `4-print_hexa.py`           | Decimal ↔ hex pairs formatting               |
+| `5-print_comb2.py`          | All numbers 00–99 (padded)                   |
+| `6-print_comb3.py`          | Unique ascending digit pairs                 |
+| `7-islower.py`              | Implement lowercase predicate                |
+| `8-uppercase.py`            | Manual uppercase conversion                  |
+| `9-print_last_digit.py`     | Print & return last digit                    |
+| `10-add.py`                 | Integer addition function                    |
+| `11-pow.py`                 | Power function implementation                |
+| `12-fizzbuzz.py`            | Classic FizzBuzz logic                       |
+| `13-insert_number.c`        | Insert node in sorted singly linked list (C) |
+| `100-print_tebahpla.py`     | Reverse alternating case alphabet            |
+| `101-remove_char_at.py`     | Copy string without specific index           |
+| `102-magic_calculation.py`  | Reproduce given bytecode behavior            |
+| `resources.md`              | Curated control flow references              |
 
-## 🧪 Testing Ideas
+## Usage
 
-Simple assertions in a Python REPL:
-
-```python
-from 7-islower import islower
-assert islower('a') and not islower('Z')
+```bash
+python3 12-fizzbuzz.py
+python3 4-print_hexa.py
+gcc -Wall -Werror -Wextra -pedantic 13-insert_number.c lists.h -o insert && ./insert
 ```
 
-## 📎 Resources
+## Key Concepts
 
-See `resources.md` for detailed study materials.
+- Branch coverage & guarding against off‑by‑one
+- Single‑responsibility function design
+- Loop patterns: counting, filtering, pair generation
+- Manual case conversion to internalize ASCII logic
 
-## 🗒 Reflection
+## Testing / Validation
 
-Transition from pure syntax to structured thinking with conditional branching patterns.
+REPL assertions for predicates & arithmetic helpers. Edge cases: zero, negatives, upper boundaries (e.g. 99), non‑alphabet characters. C insertion validated with sorted list sequences and head/tail insert scenarios.
+
+## Resources
+
+See `resources.md` for deeper dives into control flow and function basics.
+
+## Reflection
+
+This module converts raw syntax familiarity into disciplined branching + iteration habits foundational for later algorithmic work.
