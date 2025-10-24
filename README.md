@@ -1,12 +1,8 @@
-<div align="center">
-
 # Higher Level Programming (ALX Curriculum)
 
 End‑to‑end journey through Python, SQL, and JavaScript fundamentals → data modeling → networking → higher‑level abstractions. Each numbered directory is a focused, self‑contained learning sprint.
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python) ![MySQL](https://img.shields.io/badge/DB-MySQL-orange?logo=mysql) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript) ![Status](https://img.shields.io/badge/Progress-Iterative-success?logo=github)
-
-</div>
 
 > This repository captures incremental skill building. Earlier solutions favor clarity & correctness; later ones introduce refactoring, efficiency, and abstraction.
 
